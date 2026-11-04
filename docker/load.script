@@ -1,0 +1,4 @@
+zn "USER"
+Set sc = $SYSTEM.OBJ.LoadDir("/opt/irisapp/src/cls", "ck", .err, 1)
+Write !, "iris-kaggle-importer load status: ", $System.Status.GetErrorText(sc), !
+Halt

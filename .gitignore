@@ -1,0 +1,25 @@
+# IRIS / ObjectScript
+*.gbl
+*.int
+*.obj
+*.0
+iris.log
+messages.log
+alerts.log
+journal/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local configuration and secrets
+.env
+kaggle.json
+docker-compose.override.yml
+
+# Python (used only by local helper scripts, if any)
+__pycache__/
+*.pyc
+.venv/

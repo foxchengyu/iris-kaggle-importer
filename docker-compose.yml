@@ -1,0 +1,14 @@
+services:
+  iris:
+    build:
+      context: .
+    container_name: iris-kaggle-importer
+    ports:
+      - "52773:52773"
+      - "1972:1972"
+    environment:
+      KAGGLE_USERNAME: ${KAGGLE_USERNAME:-}
+      KAGGLE_KEY: ${KAGGLE_KEY:-}
+      # Optional. HTTP proxy for restricted networks, e.g. http://proxy:8080
+      KAGGLE_PROXY: ${KAGGLE_PROXY:-}
+    restart: unless-stopped

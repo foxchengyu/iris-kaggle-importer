@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-labelledby="title desc">
+  <title id="title">iris-kaggle-importer</title>
+  <desc id="desc">An eye with a downward arrow on a blue tile.</desc>
+  <defs>
+    <linearGradient id="kgTileIcon" x1="0" y1="0" x2="96" y2="96" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5AD1FF"/>
+      <stop offset="1" stop-color="#0A84D8"/>
+    </linearGradient>
+  </defs>
+  <rect width="96" height="96" rx="24" fill="url(#kgTileIcon)"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 51C25 33 71 33 81 51 71 69 25 69 15 51Z"/>
+    <circle cx="48" cy="51" r="12.5"/>
+  </g>
+  <path d="M48 43.4v15.2M43.6 54.4 48 58.9l4.4-4.5" fill="none" stroke="#BDEBFF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="75" cy="21" r="11" fill="#FFFFFF"/>
+  <g fill="#0A84D8">
+    <rect x="70.2" y="16.2" width="4" height="4" rx="1.1"/>
+    <rect x="75.8" y="16.2" width="4" height="4" rx="1.1"/>
+    <rect x="70.2" y="21.8" width="4" height="4" rx="1.1"/>
+    <rect x="75.8" y="21.8" width="4" height="4" rx="1.1"/>
+  </g>
+</svg>
