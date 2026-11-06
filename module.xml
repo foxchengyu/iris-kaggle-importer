@@ -3,7 +3,7 @@
   <Document name="iris-kaggle-importer.ZPM">
     <Module>
       <Name>iris-kaggle-importer</Name>
-      <Version>1.0.0</Version>
+      <Version>1.0.1</Version>
       <Description>Import Kaggle datasets into InterSystems IRIS with a single SQL call.</Description>
       <Keywords>kaggle,datasets,iris,sql,csv,ai</Keywords>
       <License>MIT</License>
