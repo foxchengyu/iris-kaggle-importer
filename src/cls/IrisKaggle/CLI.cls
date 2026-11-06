@@ -47,9 +47,26 @@ ClassMethod ImportFile(path As %String, targetTable As %String = "", maxRows As 
 }
 
 /// Small end to end demo used by the README and the video.
+/// When Kaggle credentials are available, imports `uciml/iris` from kaggle.com.
+/// Otherwise it imports the bundled sample CSV so the demo still works out of
+/// the box and clearly tells the user how to add real credentials.
 ClassMethod Demo()
 {
-    Do ..Import("uciml/iris")
+    Set hasCreds = ##class(IrisKaggle.Credentials).Resolve(.u, .k)
+    If hasCreds {
+        Write !, "[Demo] Kaggle credentials found — importing uciml/iris", !
+        Do ..Import("uciml/iris")
+    } Else {
+        Write !, "[Demo] No Kaggle credentials configured.", !
+        Write !, "[Demo] Importing local sample CSV instead.", !
+        Write !, "[Demo] To import live datasets from Kaggle:", !
+        Write !, "[Demo]   1. Get API key — kaggle.com → Settings → API → Create Token", !
+        Write !, "[Demo]   2. docker compose exec iris iris session IRIS", !
+        Write !, "[Demo]   3. Do ##class(IrisKaggle.CLI).Setup(""user"",""key"")", !
+        Write !, "[Demo]   4. Re-run Demo() for uciml/iris", !
+        Write !, !
+        Do ..ImportFile("/opt/irisapp/demo/sample.csv")
+    }
 }
 
 }

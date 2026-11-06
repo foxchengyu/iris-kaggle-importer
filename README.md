@@ -18,6 +18,16 @@ the rows in. Everything runs inside IRIS: no pip packages, no sidecar service.
 
 ---
 
+## Prerequisites
+
+- **Docker** (for the containerised setup) or an existing **InterSystems IRIS 2023.1+** instance.
+- **[Kaggle API credentials](https://www.kaggle.com/settings)** — required to download
+  datasets from kaggle.com. Without credentials you can still import local CSV
+  files via `ImportFile`, and the demo falls back to a bundled sample CSV.
+
+  Get your credentials on kaggle.com: **Settings → API → Create New Token**.
+  This downloads a `kaggle.json` file with your `username` and `key`.
+
 ## Why
 
 Kaggle is where most public tabular data lives, but moving a dataset into IRIS
@@ -46,13 +56,13 @@ KAGGLE_USERNAME=your_user KAGGLE_KEY=0123456789abcdef docker compose up -d --bui
 
 IRIS starts on <http://localhost:52773/csp/sys/UtilHome.csp> (`_SYSTEM` / `SYS`).
 
-Run the demo import:
+Run the demo import (works without credentials using a bundled sample CSV):
 
 ```bash
 docker compose exec iris iris session IRIS < docker/demo.script
 ```
 
-Or open **Management Portal → System Explorer → SQL** and run:
+With Kaggle credentials, point the demo at a live dataset:
 
 ```sql
 SELECT IrisKaggle.API_ImportSimple('uciml/iris')

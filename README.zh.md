@@ -15,6 +15,13 @@ SELECT IrisKaggle.API_ImportSimple('uciml/iris');
 
 ---
 
+## 前提条件
+
+- **Docker**（容器化运行）或已有的 InterSystems IRIS 2023.1+ 实例。
+- **[Kaggle API 凭证](https://www.kaggle.com/settings)** —— 从 kaggle.com 下载数据集必须提供。没有凭证时仍可导入本地 CSV 文件（`ImportFile`），演示脚本会自动使用内置示例 CSV。
+
+  在 kaggle.com 获取凭证：**Settings → API → Create New Token**，下载 `kaggle.json` 文件（含 `username` 和 `key`）。
+
 ## 为什么
 
 Kaggle 是公开表格数据最集中的地方，但把数据集搬进 IRIS 往往需要写一次性下载脚本、手动解压、手写 DDL。本项目将其压缩为一次调用，可从 SQL、ObjectScript 或终端使用，并保留审计记录。
